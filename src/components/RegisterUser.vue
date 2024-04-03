@@ -43,7 +43,6 @@ export default {
   methods: {
     async submitForm() {
       if (this.password !== this.passwordConfirmation) {
-        // Display error message or prevent form submission
         return;
       }
 
@@ -67,11 +66,10 @@ export default {
           throw new Error(errorData.message || 'Registration failed');
         }
 
-        // Registration successful
-        alert('Registration successful!'); // Show success message
+        alert('Registration successful!');
       } catch (error) {
         console.error('Error registering user:', error);
-        alert('Registration failed. Please try again.'); // Show error message
+        alert('Registration failed. Please try again.');
       }
     }
   }
