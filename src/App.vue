@@ -30,11 +30,11 @@ const isLoggedIn = computed(() => store.getters.isAuthenticated)
 const logout = () => {
   store.dispatch('logout')
     .then(() => {
-      router.push('/login') // Redirect to login after logout
+      router.push('/login')
     })
     .catch(error => {
       console.error('Logout error:', error)
-      router.push('/login') // Redirect to login even if logout fails
+      router.push('/login')
     })
 }
 </script>
