@@ -9,7 +9,7 @@ export default createStore({
   mutations: {
     setAuthenticated(state, isAuthenticated) {
       state.isAuthenticated = isAuthenticated;
-      localStorage.setItem('isAuthenticated', isAuthenticated); // Store authentication state in local storage
+      localStorage.setItem('isAuthenticated', isAuthenticated);
     },
     setErrorMessage(state, errorMessage) {
       state.errorMessage = errorMessage;
@@ -21,8 +21,7 @@ export default createStore({
   actions: {
     async login({ commit }) {
       try {
-        // Your login logic
-        commit('setAuthenticated', true); // Set authentication state to true upon successful login
+        commit('setAuthenticated', true);
         commit('setErrorMessage', '');
         commit('setSuccessMessage', 'Login successful!');
       } catch (error) {
@@ -34,8 +33,7 @@ export default createStore({
     },
     async register({ commit }) {
       try {
-        // Your registration logic
-        commit('setAuthenticated', true); // Set authentication state to true upon successful registration
+        commit('setAuthenticated', true);
         commit('setErrorMessage', '');
         commit('setSuccessMessage', 'Registration successful!');
       } catch (error) {
@@ -47,13 +45,11 @@ export default createStore({
     },
     async logout({ commit }) {
       try {
-        // Your logout logic
-        commit('setAuthenticated', false); // Set authentication state to false upon logout
+        commit('setAuthenticated', false);
         commit('setErrorMessage', '');
         commit('setSuccessMessage', 'Logout successful!');
       } catch (error) {
         console.error('Error logging out:', error);
-        // Handle logout error if needed
       }
     }
   },
